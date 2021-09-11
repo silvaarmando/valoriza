@@ -19,7 +19,7 @@ class CreateUserService {
 }: IUserRequest) {
     const usersRepository = getCustomRepository(UsersRepositories)
 
-    console.log('Name: ', name, 'Email: ', email)
+    console.log('Email: ', email)
 
     if(!email) {
       throw new Error('Email incorrect!')
