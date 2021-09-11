@@ -1,12 +1,12 @@
-﻿<h2
+﻿<h3
   align="center"
 >
   <img
     alt="Valoriza"
-    width="168em"
+    width="190em"
     src="./screensReadme/logo_valoriza.svg"
   >
-</h2>
+</h3>
 
 <h3
   align="center"
