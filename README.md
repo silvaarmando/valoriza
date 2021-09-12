@@ -56,7 +56,7 @@
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
-    href="#BUILDING THE PROJECT"
+    href="#BUILDING-THE-PROJECT"
     style="text-decoration: none"
   >
     <img
@@ -86,7 +86,7 @@
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
-    href="#ABOUT ME"
+    href="#ABOUT-ME"
     style="text-decoration: none"
   >
     <img
