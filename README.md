@@ -3,14 +3,11 @@
 >
   <img
     alt="Valoriza"
-    height="80em"
-    width="190em"
+    height="90em"
+    width="210em"
     src="./screensReadme/logo_valoriza.svg"
   >
 </h3>
-
-<br
-/>
 
 <h3
   align="center"
@@ -278,7 +275,7 @@
 <h3
 >
   <img
-    style="border-radius: 0.5em"
+    style="border-radius: 0.2em"
     src="./screensReadme/threading_node.png"
   >
 </h3>
