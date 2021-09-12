@@ -103,7 +103,7 @@
 <br
 />
 
-## TECHNOLOGIES
+### TECHNOLOGIES
 
 <p
   align="center"
@@ -343,7 +343,7 @@
   >
     REST architecture
   </a>
-  style, allowing interaction with web services RESTful. REST stands for representational transfer of state. This architecture was created by computer scientist
+  style, allowing interaction with web services RESTful. REST stands for representational transfer of state. This architecture was defined by computer scientist
   <a
     href="https://en.wikipedia.org/wiki/Roy_Fielding"
   >
