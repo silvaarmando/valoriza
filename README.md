@@ -275,7 +275,7 @@
 <h3
 >
   <img
-    style="border-radius: 0.2em"
+    style="border-radius: 15px"
     src="./screensReadme/threading_node.png"
   >
 </h3>
