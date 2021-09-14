@@ -408,10 +408,316 @@
   capabilities to the original language.
 </p>
 
-<!-- #### CREATED THE FIRST ROUTE -->
+<br
+/>
+
+#### MAIN TYPES OF METHODS IN A REST API
+
+<br
+/>
+
+| Method | Description |
+|---|---|
+| GET | Search for information |
+| POST | Insert (create) information |
+| PUT | Change information |
+| DELETE | Remove an information |
+| PATCH | Change specific information |
+
+<br
+/>
+
+#### CREATED THE FIRST ROUTE
+
+<p
+>
+  To create the first route in <strong>typescript</strong>, we first need to start the application with <strong>yarn</strong>.
+</p>
+
+```powershell
+$ yarn init -y
+```
+
+<br
+/>
+
+<p
+>
+  Then we need to install modules for our server, let's use <strong>typescript</strong> with development module.
+</p>
+
+```powershell
+$ yarn add typescript -D
+```
+
+<br
+/>
+
+<p
+>
+  and <strong>express</strong> - a minimalist framework for building web servers.
+</p>
+
+```powershell
+$ yarn add express
+```
+
+<br
+/>
+
+<p
+>
+  and the express type package as a development module.
+</p>
+
+```powershell
+$ yarn add @types/express -D
+```
+
+<br
+/>
+
+<p
+>
+  Let's create a <strong>typescript</strong> file: index.ts
+</p>
+
+<h3
+>
+  <img
+    alt="file typescript"
+    width="480em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/file_typescript.png"
+  >
+</h3>
+
+<br
+/>
+
+<p
+>
+  In the first line we import the express, using the import.
+</p>
+
+```typescript
+import express from 'express';
+```
+
+<br
+/>
+
+<p
+>
+  On the next line we need to initialize the express inside the app constant.
+</p>
+
+```typescript
+const app = express();
+```
+
+<br
+/>
+
+<p
+>
+  Then we need to pass the <strong>app</strong> with the <strong>get</strong> method and pass the resource, which in this case is our route, as <strong>test</strong>, after an arrow function that have a request and a response as parameters.
+</p>
+
+| Command | Description |
+|---|---|
+| Request | Submit a data request |
+| Response | Respond to a data request |
+
+<br
+/>
+
+<p
+>
+  Inside the function, we pass the response with the <strong>send</strong> method, opening parentheses and quotation marks, we write a response message.
+</p>
+
+```typescript
+app.get('/test', (request, response) => {
+  response.send('Hi humans!');
+})
+```
+
+<br
+/>
+
+<p
+>
+  On the next line we start the server with the <strong>app</strong> with the method <strong>listen</strong>, which will listen to our port, so we need to pass the port, which will be port <strong>3001</ strong>.
+</p>
+
+```typescript
+app.listen(3001, () => console.log('Hi humans!'));
+```
+
+<br
+/>
+
+<p
+>
+  Now we need to initialize the typescript
+</p>
+
+```powershell
+$ yarn tsc
+```
+<br
+/>
+
+<p
+>
+  The typescript also needs a configuration file to work within the project.
+</p>
+
+```powershell
+$ yarn tsc --init
+```
+
+<br
+/>
+
+<p
+>
+  We will also use a module to monitor the server called <a href="https://yarnpkg.com/package/ts-node-dev"> ts-node-dev </a>.
+</p>
+
+```powershell
+yarn add ts-node-dev
+```
+
+<br
+/>
+
+<p
+>
+  Then we have to create a script inside the <strong>package.json</strong> file.
+</p>
+
+```json
+  "scripts": {
+    "dev": "ts-node-dev index.ts"
+  },
+```
+
+<br
+/>
+
+<p
+>
+  To finally run our server locally:
+</p>
+
+```powershell
+$ yarn dev
+```
+
+<br
+/>
+
+#### Now if everything is ok, we can access the url <http://localhost:3001/test>
+
+<br
+/>
+
+#### SETTING INSOMNIA
+
+<p
+>
+  For Insomnia configuration, I read an <a href="https://blog.cod3r.com.br/testes-de-api-rest-com-o-insomnia/">article</a> that shows how to configure it, but I also recommend this <a href="https://www.youtube.com/watch?v=3tB0uDliS6Y">video</a> from Rocketseat that shows you how to do it.
+</p>
+
+<br
+/>
+
+#### CREATING A POST ROUTE
+
+<p
+>
+  We need to pass the <strong>app</strong> with the <strong>post</strong> method and pass the resource, <strong>testPost</strong>, after an arrow function. Inside the function, we pass the response with the <strong>send</strong> method, opening parentheses and quotation marks, we write a response message.
+</p>
+
+```typescript
+app.post('/testPost', (request, response) => {
+  response.send('Hi guys!');
+})
+```
+
+<br
+/>
+
+#### STARTING THE PROJECT ON YOUR MACHINE
+
+<p
+>
+  I'll leave a script on how to clone and run the app in development
+</p>
+
+<p
+>
+  Clone this repository
+</p>
+
+```powershell
+$ git clone https://github.com/franciscoarmando63/valoriza.git
+```
+
+<br
+/>
+
+<p
+>
+  Access the project folder in terminal/cmd or powerhell
+</p>
+
+```powershell
+$ cd valoriza
+```
+
+<br
+/>
+
+<p
+>
+  Install dependencies
+</p>
+
+```powershell
+$ yarn install .
+```
+
+<br
+/>
+
+<p
+>
+  Run the application in development mode with <strong>ts-node-dev</strong>.
+</p>
+
+```powershell
+$ yarn dev
+```
+
+<br
+/>
+
+#### The server will start on port: 3001 - go to <http://localhost:3001/>
+
+<br
+/>
 
 ### SCREENS
 
+<br
+/>
+
 ### LICENSE
+
+<br
+/>
 
 ### ABOUT ME
