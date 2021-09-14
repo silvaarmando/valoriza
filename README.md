@@ -18,7 +18,7 @@
   >
     NLW Together
   </a>
-  , Special Edition,
+  , Special Edition
   <a
     href="https://rocketseat.com.br"
   >
