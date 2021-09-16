@@ -50,7 +50,7 @@
     style="text-decoration: none"
   >
     <img
-      height="28em"
+      height="38em"
       alt="Technologies"
       src="./screensReadme/technologies.svg"
     />
@@ -60,7 +60,7 @@
     style="text-decoration: none"
   >
     <img
-      height="28em"
+      height="38em"
       alt="Building the project"
       src="./screensReadme/building_the_project.svg"
     />
@@ -70,7 +70,7 @@
     style="text-decoration: none"
   >
     <img
-      height="28em"
+      height="38em"
       alt="Screens"
       src="./screensReadme/screens.svg"
     />
@@ -80,7 +80,7 @@
     style="text-decoration: none"
   >
     <img
-      height="28em"
+      height="38em"
       alt="LICENSE"
       src="./screensReadme/license.svg"
     />
@@ -90,7 +90,7 @@
     style="text-decoration: none"
   >
     <img
-      height="28em"
+      height="38em"
       alt="ABOUT ME"
       src="./screensReadme/about_me.svg"
     />
