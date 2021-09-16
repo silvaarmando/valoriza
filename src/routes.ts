@@ -7,6 +7,9 @@ import {
 import {
   CreateTagController
 } from './controllers/CreateTagController'
+import {
+  ensureAdmin
+} from './middlewares/ensureAdmin'
 
 const router = Router()
 
@@ -19,7 +22,7 @@ router.post(
 )
 
 router.post(
-  '/tags',
+  '/tags', ensureAdmin,
   createTagController.handle
 )
 
