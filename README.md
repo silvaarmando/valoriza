@@ -5,7 +5,7 @@
     alt="Valoriza"
     height="90em"
     width="210em"
-    src="./screensReadme/logo_valoriza.svg"
+    src="./screensReadme/valoriza.svg"
   >
 </h3>
 
@@ -52,7 +52,7 @@
     <img
       height="28em"
       alt="Technologies"
-      src="./screensReadme/technologies.svg"
+      src="./screensReadme/technologie.svg"
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
@@ -62,7 +62,7 @@
     <img
       height="28em"
       alt="Building the project"
-      src="./screensReadme/building_the_project.svg"
+      src="./screensReadme/building.svg"
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
@@ -72,7 +72,7 @@
     <img
       height="28em"
       alt="Screens"
-      src="./screensReadme/screens.svg"
+      src="./screensReadme/screen.svg"
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
@@ -82,7 +82,7 @@
     <img
       height="28em"
       alt="LICENSE"
-      src="./screensReadme/license.svg"
+      src="./screensReadme/licen.svg"
     />
   </a>&nbsp;&nbsp;&nbsp;
   <a
@@ -92,7 +92,7 @@
     <img
       height="28em"
       alt="ABOUT ME"
-      src="./screensReadme/about_me.svg"
+      src="./screensReadme/about.svg"
     />
   </a>
 </h3>
