@@ -3,7 +3,6 @@
 >
   <img
     alt="Valoriza"
-    height="90em"
     width="210em"
     src="./screensReadme/valoriza_logo.svg"
   >
