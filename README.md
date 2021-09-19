@@ -663,9 +663,9 @@ app.post('/testPost', (request, response) => {
 
 | Parameter | Objective | Use case | Exemples |
 |---|---|---|---|
-| [Query Params](https://en.wikipedia.org/wiki/Query_string) | Recebe os dados da requisição como parâmetro na URL. | Filtros para fazer consultas na aplicação pela url | <http://localhost:3001/produtos?name=teclado&description=tecladobom> |
-| Route params | Recebe os dados da requisição na rota. | Melhor maneira para buscar algo específico, deletar ou atualizar usando o identificador único. | GET:<http://localhost:3001/produtos/teclado> PUT:<http://localhost:3001/produtos/teclado> DELETE:<http://localhost:3001/produtos/teclado/718391938192>  |
-| Body Params | Recebe os dados da requisição no corpo da requisição, em um objeto em JSON. |  Sempre utilizando no método POST  e enviados no formato JSON da requisição. | {  "product": "keyboard", "description": "good keyboard", "price": 250 } |
+| [Query Params](https://en.wikipedia.org/wiki/Query_string) | Receives the request data as a parameter in the URL. | Filters to query the application by url | <http://localhost:3001/produtos?name=teclado&description=tecladobom> |
+| Route params | Receives the request data on the route. | Best way to search for something specific, delete or update using unique identifier. | GET:<http://localhost:3001/produtos/teclado> PUT:<http://localhost:3001/produtos/teclado> DELETE:<http://localhost:3001/produtos/teclado/718391938192>  |
+| Body Params | Receives the request data in the request body, in a JSON object. |  Always using the POST method and sent in the request JSON format. | {  "product": "keyboard", "description": "good keyboard", "price": 250 } |
 
 <br
 />
