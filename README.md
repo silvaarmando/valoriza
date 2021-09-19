@@ -670,6 +670,25 @@ app.post('/testPost', (request, response) => {
 <br
 />
 
+#### DATABASE: WHAT ARE THE WAYS TO USE IT IN THE APPLICATION?
+
+<h3
+>
+  <img
+    alt="ways to use the database in the application"
+    width="480em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/database.png"
+  >
+</h3>
+<p
+>
+  There are three ways to connect and use the database in the application with Node.js. Using the <a href="https://github.com/mysqljs/mysql">native database driver</a> using a <a href="https://www.youtube.com/watch? v=U7GjS3FuSkA">query builder</a>, the most used in Node.js is the <a href="https://knexjs.org">Knex.js</a>, and using a <a href="https://www.youtube.com/watch?v=snOXxJa31GI">ORM</a> (Object-relational mapping), and the most used in Node.js are the <a href="https:/ /sequelize.org/master/">Sequelize</a> and the <a href="https://typeorm.io/#/">TypeORM</a>.
+</p>
+
+<br
+/>
+
 #### STARTING THE PROJECT ON YOUR MACHINE
 
 <p
