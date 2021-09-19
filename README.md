@@ -664,7 +664,7 @@ app.post('/testPost', (request, response) => {
 | Parameter | Objective | Use case | Exemples |
 |---|---|---|---|
 | [Query Params](https://en.wikipedia.org/wiki/Query_string) | Recebe os dados da requisição como parâmetro na URL. | Filtros para fazer consultas na aplicação pela url | <http://localhost:3001/produtos?name=teclado&description=tecladobom> |
-| Route params | Recebe os dados da requisição na rota. | Melhor maneira para buscar algo específico, deletar ou atualizar usando o identificador único. | GET: http://localhost:3001/produtos/718391938192 |
+| Route params | Recebe os dados da requisição na rota. | Melhor maneira para buscar algo específico, deletar ou atualizar usando o identificador único. | GET<http://localhost:3001/produtos/718391938192> |
 | Body Params | Recebe os dados da requisição no corpo da requisição, em um objeto em JSON. |  Sempre utilizando no método POST  e enviados no formato JSON da requisição. | { "name": "Thiago", "age": 18, "email": "thiago@mail.com" } |
 
 <br
