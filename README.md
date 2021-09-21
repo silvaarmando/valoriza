@@ -683,7 +683,96 @@ app.post('/testPost', (request, response) => {
 </h3>
 <p
 >
-  There are three ways to connect and use the database in the application with Node.js. Using the <a href="https://github.com/mysqljs/mysql">native database driver</a> using a <a href="https://www.youtube.com/watch? v=U7GjS3FuSkA">query builder</a>, the most used in Node.js is the <a href="https://knexjs.org">Knex.js</a>, and using a <a href="https://www.youtube.com/watch?v=snOXxJa31GI">ORM</a> (Object-relational mapping), and the most used in Node.js are the <a href="https:/ /sequelize.org/master/">Sequelize</a> and the <a href="https://typeorm.io/#/">TypeORM</a>.
+  There are three ways to connect and use the database in the application with Node.js. Using the <a href="https://github.com/mysqljs/mysql">native database driver</a>, using a <a href="https://www.youtube.com/watch?v=U7GjS3FuSkA">query builder</a>, the most used in Node.js is the <a href="https://knexjs.org">Knex.js</a>, and using a <a href="https://www.youtube.com/watch?v=snOXxJa31GI">ORM</a> (Object-relational mapping), and the most used in Node.js are the <a href="https://sequelize.org/master/">Sequelize</a> and the <a href="https://typeorm.io/#/">TypeORM</a>.
+  We use a **ORM**, specifically the **TypeORM**, for ease of database maintenance and direct conversion between a relational database and a language <a href ="https://www.youtube.com/watchv=QY0Kdg83orY">Object Oriented</a>.
+</p>
+
+<br
+/>
+
+#### Configuring the Database in our Application with TypeORM
+
+<p
+>
+  O primeiro passo para configurarmos nossa o TypeORM na aplicação, é instalar os módulos.
+
+  Precisamos instalar o modulo do TypeORM
+</p>
+
+```powershell
+$ yarn add typeorm
+```
+
+<p
+>
+  também é preciso instalar o <a href="https://github.com/rbuckton/reflect-metadata">reflect-metadata</a>
+</p> 
+
+```powershell
+$ yarn add reflect-metadata
+```
+
+<p
+>
+  e importa o mesmo em um local global na nossa API.
+</p>
+
+```typescript
+$ import "reflect-metadata";
+```
+
+<p>
+  o pacote de tipagem do Node e um driver do banco de dados, no caso, vamos utilizar inicialmente o SQLite.
+</p>
+
+```powershell
+$ yarn add sqlite3
+```
+
+<p
+>
+  Dentre as várias opções, para criar rapidamente um arquivo de inicialização dentro de um projeto que já está em andamento, vamos rodar o comando:
+</p>
+
+```powershell
+$ typeorm init
+```
+
+<p
+>
+  Para iniciar um projeto do inicio é preciso utilizar o comando com mais opções
+</p>
+
+```powershell
+$ typeorm init --name projectName --database sqlite3
+```
+
+<p
+>
+  vamos utilizar um arquivo <strong>JSON</strong>. Para isso vamos criar no diretório do nosso projeto um arquivo <code>ormconfig.json</code>,
+  nesse projeto, para não arriscar alterações no projeto, vamos criar o arquivo sem utilizar o comando, e ir adicionando o que for necessário. 
+</p>
+
+```json
+{
+  "type": "sqlite",
+  "database": "src/database/database.sqlite"
+}
+```
+
+<p>
+  Na primeira linha <strong>type</strong> adicionamos o tipo de banco. Na próxima, <strong>database</strong>, adicionamos a localização do banco de dados. Para esse banco é necessário criarmos um <code>index.ts</code>.
+</p>
+
+```typescript
+import { createConnection } from "typeorm"
+
+createConnection()
+```
+
+<p
+>
+  Para criar o arquivo do banco de dados temos que indicar o index database no servidor e finalmente rodar o servidor.
 </p>
 
 <br
