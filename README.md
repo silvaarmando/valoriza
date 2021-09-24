@@ -690,68 +690,107 @@ app.post('/testPost', (request, response) => {
 <br
 />
 
-#### Configuring the Database in our Application with TypeORM
+#### CONFIGURING THE DATABASE IN OUR APPLICATION WITH TYPEORM
 
 <p
 >
-  O primeiro passo para configurarmos nossa o TypeORM na aplicação, é instalar os módulos.
+  The first step to configure TypeORM in the application is to install the modules.
 
-  Precisamos instalar o modulo do TypeORM
+  Installing the TypeORM module
 </p>
+
+<br
+/>
 
 ```powershell
 $ yarn add typeorm
 ```
 
+<br
+/>
+
 <p
 >
-  também é preciso instalar o <a href="https://github.com/rbuckton/reflect-metadata">reflect-metadata</a>
+  you also need to install <a href="https://github.com/rbuckton/reflect-metadata">reflect-metadata</a> to add metadata consistently in various use cases, such as objects as decorators.
 </p> 
+
+<br
+/>
 
 ```powershell
 $ yarn add reflect-metadata
 ```
 
+<br
+/>
+
 <p
 >
-  e importa o mesmo em um local global na nossa API.
+  and import it into a global location in our API.
 </p>
+
+<br
+/>
 
 ```typescript
 $ import "reflect-metadata";
 ```
 
+<br
+/>
+
 <p>
-  o pacote de tipagem do Node e um driver do banco de dados, no caso, vamos utilizar inicialmente o SQLite.
+  the <a href="https://yarnpkg.com/package/@types/node">Node.js typing</a> package, and a database driver, in this case, we will use SQLite initially .
 </p>
+
+<br
+/>
 
 ```powershell
 $ yarn add sqlite3
 ```
 
+<br
+/>
+
 <p
 >
-  Dentre as várias opções, para criar rapidamente um arquivo de inicialização dentro de um projeto que já está em andamento, vamos rodar o comando:
+  Among the various options, to quickly create an initialization file within a project that is already in progress, you can run the command:
 </p>
+
+<br
+/>
 
 ```powershell
 $ typeorm init
 ```
 
+<br
+/>
+
 <p
 >
-  Para iniciar um projeto do inicio é preciso utilizar o comando com mais opções
+  It is still possible to use the same command with more options, to start a project.
 </p>
+
+<br
+/>
 
 ```powershell
 $ typeorm init --name projectName --database sqlite3
 ```
 
+<br
+/>
+
 <p
 >
-  vamos utilizar um arquivo <strong>JSON</strong>. Para isso vamos criar no diretório do nosso projeto um arquivo <code>ormconfig.json</code>,
-  nesse projeto, para não arriscar alterações no projeto, vamos criar o arquivo sem utilizar o comando, e ir adicionando o que for necessário. 
+  In this case, we will use a <strong>JSON</strong> file. To do this, let's create a <code>ormconfig.json</code> file in our project directory,
+  in this project, so as not to risk changes in the project, let's create the file without using the command, and add whatever is necessary.
 </p>
+
+<br
+/>
 
 ```json
 {
@@ -760,9 +799,15 @@ $ typeorm init --name projectName --database sqlite3
 }
 ```
 
+<br
+/>
+
 <p>
-  Na primeira linha <strong>type</strong> adicionamos o tipo de banco. Na próxima, <strong>database</strong>, adicionamos a localização do banco de dados. Para esse banco é necessário criarmos um <code>index.ts</code>.
+  In the first line <strong>type</strong> we add the bank type. In the next one, <strong>database</strong>, we add the location of the database. For this database it is necessary to create an <code>index.ts</code>.
 </p>
+
+<br
+/>
 
 ```typescript
 import { createConnection } from "typeorm"
@@ -770,13 +815,31 @@ import { createConnection } from "typeorm"
 createConnection()
 ```
 
+<br
+/>
+
 <p
 >
-  Para criar o arquivo do banco de dados temos que indicar o index database no servidor e finalmente rodar o servidor.
+  To create the database file we have to indicate it in an index file inside the database on the server and finally run the server. After that the SQLite database file is created.
 </p>
 
 <br
 />
+
+<h3
+>
+  <img
+    alt="Database Index TypeORM"
+    width="280em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/database-index-typeorm.png"
+  >
+</h3>
+
+<br
+/>
+
+#### CONFIGURANDO AS MIGRATIONS
 
 #### STARTING THE PROJECT ON YOUR MACHINE
 
