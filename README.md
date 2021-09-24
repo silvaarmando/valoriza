@@ -200,16 +200,6 @@
 
 ### BUILDING THE PROJECT
 
-#### PROJECT'S GOAL
-
-<p
->
- O projeto tem o objetivo de enviar elogios e receber elogios dentro para os cadastrados na aplicação.
-</p>
-
-<br
-/>
-
 #### DEVELOPMENT ENVIRONMENT
 
 <p
