@@ -699,9 +699,6 @@ app.post('/testPost', (request, response) => {
   Installing the TypeORM module
 </p>
 
-<br
-/>
-
 ```powershell
 $ yarn add typeorm
 ```
@@ -712,10 +709,7 @@ $ yarn add typeorm
 <p
 >
   you also need to install <a href="https://github.com/rbuckton/reflect-metadata">reflect-metadata</a> to add metadata consistently in various use cases, such as objects as decorators.
-</p> 
-
-<br
-/>
+</p>
 
 ```powershell
 $ yarn add reflect-metadata
@@ -729,9 +723,6 @@ $ yarn add reflect-metadata
   and import it into a global location in our API.
 </p>
 
-<br
-/>
-
 ```typescript
 $ import "reflect-metadata";
 ```
@@ -742,9 +733,6 @@ $ import "reflect-metadata";
 <p>
   the <a href="https://yarnpkg.com/package/@types/node">Node.js typing</a> package, and a database driver, in this case, we will use SQLite initially .
 </p>
-
-<br
-/>
 
 ```powershell
 $ yarn add sqlite3
@@ -758,9 +746,6 @@ $ yarn add sqlite3
   Among the various options, to quickly create an initialization file within a project that is already in progress, you can run the command:
 </p>
 
-<br
-/>
-
 ```powershell
 $ typeorm init
 ```
@@ -772,9 +757,6 @@ $ typeorm init
 >
   It is still possible to use the same command with more options, to start a project.
 </p>
-
-<br
-/>
 
 ```powershell
 $ typeorm init --name projectName --database sqlite3
@@ -788,9 +770,6 @@ $ typeorm init --name projectName --database sqlite3
   In this case, we will use a <strong>JSON</strong> file. To do this, let's create a <code>ormconfig.json</code> file in our project directory,
   in this project, so as not to risk changes in the project, let's create the file without using the command, and add whatever is necessary.
 </p>
-
-<br
-/>
 
 ```json
 {
@@ -806,9 +785,6 @@ $ typeorm init --name projectName --database sqlite3
   In the first line <strong>type</strong> we add the bank type. In the next one, <strong>database</strong>, we add the location of the database. For this database it is necessary to create an <code>index.ts</code>.
 </p>
 
-<br
-/>
-
 ```typescript
 import { createConnection } from "typeorm"
 
@@ -823,9 +799,6 @@ createConnection()
   To create the database file we have to indicate it in an index file inside the database on the server and finally run the server. After that the SQLite database file is created.
 </p>
 
-<br
-/>
-
 <h3
 >
   <img
@@ -839,7 +812,7 @@ createConnection()
 <br
 />
 
-#### CONFIGURANDO AS MIGRATIONS
+#### SETTING THE MIGRATIONS
 
 #### STARTING THE PROJECT ON YOUR MACHINE
 
