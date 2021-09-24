@@ -1,4 +1,4 @@
-<h3
+<h4
   align="center"
 >
   <img
@@ -6,7 +6,7 @@
     width="210em"
     src="./screensReadme/valoriza_logo.svg"
   >
-</h3>
+</h4>
 
 <h3
   align="center"
