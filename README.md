@@ -200,6 +200,50 @@
 
 ### BUILDING THE PROJECT
 
+#### WHAT IS THE PROJECT?
+
+<p
+>
+  The project consists of a praise platform, which we can praise and return praise from within the application.
+</p>
+
+<ul>
+  <li>User Registration</li>
+</ul>
+
+<ul>
+  <li>Tag Registration (possible compliments)</li>
+  <ul>
+    <li>Admin User Only</li>
+  </ul>
+</ul>
+
+<ul>
+  <li>Register of Compliments</li>
+  <ul>
+    <li>User ID</li>
+    <li>Tag ID</li>
+    <li>Creation Date</li>
+  </ul>
+</ul>
+
+<ul>
+  User Authentication
+  <ul>
+    <li>Generate JWT Token</li>
+    <li>Validate user logged in required routes</li>
+  </ul>
+</ul>
+
+<ul>
+  <li>User List</li>
+  <li>Tag Listing</li>
+  <li>List of compliments by users</li>
+</ul>
+
+<br
+/>
+
 #### DEVELOPMENT ENVIRONMENT
 
 <p
@@ -209,13 +253,21 @@
     href="https://www.notion.so/Configura-es-do-ambiente-45e12d2ced17465cabbd81dcbd53576d"
   >
     here
-  </a>. (The environment setup page in
-  <a
-    href="https://www.notion.so/pt-br"
-  >
-    Notion
-  </a> was created by Rocketseat).
+  </a>.
 </p>
+
+> [!NOTE]
+> The environment setup page in [Notion](https://www.notion.so) was created by Rocketseat.
+
+<h3>
+  <img
+    alt="Notion gif"
+    width="220em"
+    height="280em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/gif-notion.gif"
+  >
+</h3>
 
 <br
 />
@@ -537,7 +589,7 @@ app.get('/test', (request, response) => {
 
 <p
 >
-  On the next line we start the server with the <strong>app</strong> with the method <strong>listen</strong>, which will listen to our port, so we need to pass the port, which will be port <strong>3001</ strong>.
+  On the next line we start the server with the <strong>app</strong> with the method <strong>listen</strong>, which will listen to our port, so we need to pass the port, which will be port <strong>3001</strong>.
 </p>
 
 ```typescript
@@ -608,7 +660,10 @@ $ yarn dev
 <br
 />
 
-#### Now if everything is ok, we can access the url <http://localhost:3001/test>
+<p
+>
+  Now if everything is ok, we can access the url <http://localhost:3001/test>
+</p>
 
 <br
 />
@@ -617,7 +672,19 @@ $ yarn dev
 
 <p
 >
-  For Insomnia configuration, I read an <a href="https://blog.cod3r.com.br/testes-de-api-rest-com-o-insomnia/">article</a> that shows how to configure it, but I also recommend this <a href="https://www.youtube.com/watch?v=3tB0uDliS6Y">video</a> from Rocketseat that shows you how to do it.
+  For Insomnia configuration, I read an
+  <a
+    href="https://blog.cod3r.com.br/testes-de-api-rest-com-o-insomnia/"
+  >
+    article
+  </a>
+  that shows how to configure it, but I also recommend this
+  <a
+    href="https://www.youtube.com/watch?v=3tB0uDliS6Y"
+  >
+    video
+  </a>
+  from Rocketseat that shows you how to do it.
 </p>
 
 <br
@@ -627,7 +694,16 @@ $ yarn dev
 
 <p
 >
-  We need to pass the <strong>app</strong> with the <strong>post</strong> method and pass the resource, <strong>testPost</strong>, after an arrow function. Inside the function, we pass the response with the <strong>send</strong> method, opening parentheses and quotation marks, we write a response message.
+  We need to pass the
+  <strong
+  >
+    app
+  </strong>
+  with the
+  <strong
+  >
+    post
+  </strong> method and pass the resource, <strong>testPost</strong>, after an arrow function. Inside the function, we pass the response with the <strong>send</strong> method, opening parentheses and quotation marks, we write a response message.
 </p>
 
 ```typescript
@@ -635,6 +711,30 @@ app.post('/testPost', (request, response) => {
   response.send('Hi guys!');
 })
 ```
+
+<br
+/>
+
+#### DATABASE STRUCTURE
+
+<p>
+  Before continuing API development it is very important that we define the application <a href="https://www.ibm.com/docs/pt-br/mam/7.6.1?topic=design-relational-database-structure">database structure</a>.
+</p>
+
+<h3
+>
+  <img
+    alt="Imagem definindo a estrutura do banco de dados"
+    width="480em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/database_structure.png"
+  />
+</h3>
+
+<p
+>
+  The image above is a non-accurate representation of what the <a href="https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/">entity relationship diagram</a> would look like.
+</p>
 
 <br
 />
@@ -786,7 +886,18 @@ createConnection()
 
 <p
 >
-  To create the database file we have to indicate it in an index file inside the database on the server and finally run the server. After that the SQLite database file is created.
+  To create the database file we have to indicate it in an index file inside the database on the server and finally run the server.
+</p>
+
+```typescript
+import './database';
+```
+
+<br
+/>
+
+<p>
+  After that the SQLite database file is created.
 </p>
 
 <h3
@@ -802,7 +913,217 @@ createConnection()
 <br
 />
 
+#### WHAT ARE MIGRATIONS?
+
+<p
+>
+  <a href="https://cloud.google.com/architecture/database-migration-concepts-principles-part-1">Migrations</a> help
+  database versioning
+  during development, which
+  usually avoid writing
+  of SQL scripts and do how
+  bank updates through
+  of the programming language itself
+  and frameworks used.
+</p>
+
+<h3
+>
+  <img
+    alt="O que são Migrations?"
+    width="480em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/what_is_migrations.png"
+  >
+</h3>
+
+<br
+/>
+
 #### SETTING THE MIGRATIONS
+
+<p
+>
+First, we need to reference within the <strong>cli </strong> parameter, where our recognized migrations are stored.
+</p>
+
+```json
+{
+  "type": "sqlite",
+  "database": "src/database/database.sqlite",
+  "cli": {
+  "migrationsDir": "src/database/migrations"
+  }
+}
+```
+
+<br
+/>
+
+<p
+>
+  Second, we need to create a script in <strong>package.json</strong> to run the <strong>TypeORM</strong> cli to create the <strong>migrations</strong>
+</p>
+
+```json
+"scripts": {
+  "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+}
+```
+
+<br
+/>
+
+<p
+>
+  Then just create the first migration using the CLI.
+</p>
+
+```powershell
+$  yarn typeorm migration:create -n CreateUsers
+```
+
+<p
+>
+This command will create a migration with a timestamp and table name which is <strong>CreateUsers</strong>. Within this query we will be able to create our tables for the database.
+</p>
+
+```typescript
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table
+} from "typeorm";
+
+export class CreateUsers1631066606706 implements MigrationInterface {
+
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.createTable(
+      new Table({
+        name: "users",
+        columns: [
+          {
+            name: "id",
+            type: "uuid",
+            isPrimary: true,
+          },
+          {
+            name: "name",
+            type: "varchar",
+          },
+          {
+            name: "email",
+            type: "varchar",
+          },
+          {
+            name: "admin",
+            type: "boolean",
+            default: false,
+          },
+          {
+            name: "created_at",
+            type: "timestamp",
+            default: "now()",
+          },
+          {
+            name: "updated_at",
+            type: "timestamp",
+          }
+        ]
+      })
+    )
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable("users")
+  }
+}
+```
+
+<p
+>
+  In addition to <strong>MigrationInterface</strong>, and <strong>QueryRunner</strong>, used to run an SQL query, you need to import the <strong>Table</strong>, which will allow you to create a new SQL table inside a <strong>TypeScript</strong> (JavaScript) file inside an Up function to up a query or down to delete this query if it is not possible to create it. The ID type - <a href="https://www.uuidgenerator.net">UUID</a> is an acronym for <a href = "https://en.wikipedia.org/wiki/Universally_unique_identifier">universally unique identifier</a>, the term globally unique identifier is also widely used, but in general terms they are unique solidary pseudorandoms, for practical purposes what is generated is practically impossible to duplicate. The other column types are <a href="https://www.w3schools.com/sql/default.asp">basic data structure knowledge</a>.
+</p>
+
+<p>
+  <code>VARCHAR</code> is a variable length string and can be a maximum of 8000 characters.
+
+  <code>BOOLEAN</code> is a primitive data type that has two values, 0 or 1, false or true. Named boolean in honor of <a href="https://www.bbc.com/english/noticias/2015/11/151102_boole_google_tg"> George Boole </a>, who defined an algebraic logic system for the first time in half of the nineteenth century. It is used in logical operations such as <strong> conjunction </strong>, <strong> disjunction </strong>, <strong> exclusive disjunction </strong>, <strong> logical equivalence </strong> and <strong> negation </strong>, personal to some of the operations of <strong> Boolean algebra </strong>.
+
+  <code>TIMESTAMP</code> is a string denoting the time or data that a certain event occurred and represents a specific point on the timeline and takes into account the time zone in question (UTC).
+</p>
+
+<p
+>
+  To run this migration we need to inform where migrations are located, within the <strong>migrations</strong> parameter.
+</p>
+
+```json
+{
+  "cli": {
+    "migrationsDir": "src/database/migrations",
+  }
+}
+{
+  "type": "sqlite",
+  "database": "src/database/database.sqlite",
+  "migrations": [ "src/database/migrations/*.ts" ],
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
+}
+```
+
+<p
+>
+  Then we just need to run this migration in the terminal and that's it, for that we need to run the command below and it will create our table in the database.
+</p>
+
+```powershell
+$ yarn typeorm migration:run
+```
+<br
+/>
+
+#### WHAT IS ENTITY?
+
+<br
+/>
+
+#### CREATE A NEW ENTITY
+
+<br
+/>
+
+#### WHAT IS REPOSITORY?
+
+<br
+/>
+
+#### CREATE A NEW REPOSITORY
+
+<br
+/>
+
+#### WHAT IS SERVICE?
+
+<br
+/>
+
+#### CREATE A NEW SERVICE
+
+<br
+/>
+
+#### WHAT IS CONTROLLER?
+
+<br
+/>
+
+#### CREATE A NEW CONTROLLERx
+
+<br
+/>
 
 #### STARTING THE PROJECT ON YOUR MACHINE
 
@@ -859,7 +1180,10 @@ $ yarn dev
 <br
 />
 
-#### The server will start on port: 3001 - go to <http://localhost:3001/>
+<p
+>
+  The server will start on port: 3001 - go to <http://localhost:3001/>
+</p>
 
 <br
 />

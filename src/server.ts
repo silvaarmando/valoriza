@@ -9,6 +9,7 @@ import
 import 'express-async-errors'
 
 import { router } from './routes'
+
 import "./database"
 
 const app = express()
