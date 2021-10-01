@@ -386,8 +386,7 @@
     href="https://en.wikipedia.org/wiki/Roy_Fielding"
   >
     Roy Fielding
-  </a>
-  . REST is not a protocol or standard, but rather a set of architectural constraints. API developers can implement the REST architecture in a variety of ways. When a client makes a request using a RESTful API, that API transfers a representation of the resource's state to the requester or endpoint. This information (or representation) is delivered via <a
+  </a>. REST is not a protocol or standard, but rather a set of architectural constraints. API developers can implement the REST architecture in a variety of ways. When a client makes a request using a RESTful API, that API transfers a representation of the resource's state to the requester or endpoint. This information (or representation) is delivered via <a
     href=""
   >
     HTTP
