@@ -1060,11 +1060,6 @@ export class CreateUsers1631066606706 implements MigrationInterface {
 
 ```json
 {
-  "cli": {
-    "migrationsDir": "src/database/migrations",
-  }
-}
-{
   "type": "sqlite",
   "database": "src/database/database.sqlite",
   "migrations": [ "src/database/migrations/*.ts" ],
@@ -1080,22 +1075,165 @@ export class CreateUsers1631066606706 implements MigrationInterface {
 </p>
 
 ```powershell
-$ yarn typeorm migration:run
+$ yarn typeorm migration:run CreateUsers
 ```
 <br
 />
 
 #### WHAT IS ENTITY?
 
+<p
+>
+  <a href="https://pt.wikipedia.org/wiki/Entity_(inform%C3%A1tica)">Entity</a> is a thing, concrete or abstract, including associations between them, abstracted from the real world and modeled in the form of a table that will store information in the database. Inside an ORM it works by receiving the application data in the <strong>Entity</strong>, passing the information through the ORM, which will transcribe this code into <strong>SQL</strong>, and transferring this information or change to the database.
+</p>
+
+<h3
+>
+  <img
+    alt="Entity Description"
+    width="480em"
+    style="border-radius: 0.5em"
+    src="./screensReadme/entity_description.svg"
+  >
+</h3>
+
 <br
 />
 
 #### CREATE A NEW ENTITY
 
+<p
+>
+  Para criarmos uma entidade com o TypeORM precisamos definir onde essa entidade está dentro da nossa aplicação, para isso dentro do <strong>ormconfig.json</strong>
+</p>
+
+```json
+{
+  "type": "sqlite",
+  "database": "src/database/database.sqlite",
+  "migrations": [ "src/database/migrations/*.ts" ],
+  "cli": {
+    "migrationsDir": "src/database/migrations",
+    "entitiesDir": "src/entities"
+  }
+}
+```
+
+<p
+>
+  Agora precisamos rodar um comando na cli para criar a entidade dentro da pasta entities referenciada no <strong>ormconfig.json</strong>
+</p>
+
+```powershell
+$ yarn typeorm entity:create -n User
+```
+
+<p
+>
+  Depois podemos ver o arquivo <strong>User.ts</strong> dentro da pasta <strong>entities</strong>, e ele já cria uma base do que vai ser a entidade de fato. Mas antes de continuar, devemos habilitar o <strong>experimentalDecorators</strong> e o <strong>emitDecoratorMetadata</strong>, para podermos trabalhar com <strong>decorators</strong>.
+</p>
+
+```json
+{
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true
+}
+```
+
+```typescript
+import { Entity } from "typeorm";
+
+@Entity()
+export class User {
+
+};
+```
+
+<p>
+  No decorator Entity precisamos passar como parametro o nome da entidade, dentro da classe <strong>User</strong> temos que definir todos os atributos já setados na migration <strong>CreateUsers</strong>, também precisamos definir suas colunas, id, como <strong>PrimaryColumn</strong>, as colunas de tipo string, number, e boolean, são definidas apenas como <strong>Column</strong>, já as colunas de data, precisão de um tipo especial, a coluna de criação de data é definida como <strong>CreateDateColumn</strong>, a coluna de alteração de data é definida como <strong>UpdateDateColumn<strong>.
+</p>
+
+```typescript
+import {
+  Entity,
+  PrimaryColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn
+} from "typeorm";
+
+@Entity("users")
+export class User {
+  @PrimaryColumn()
+  id: string;
+
+  @Column()
+  name: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  admin: boolean;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+};
+```
+
+<p>
+  Por último, precisamos configurar a biblioteca <strong>UUID</strong> dentro da entidade, para o mesmo, precisamos baixa-lá
+</p>
+
+```powershell
+$ yarn add uuid
+```
+
+<p>
+  E também sua biblioteca de tipos.
+</p>
+
+```powershell
+$ yarn add @types/uuid
+```
+
+<p>
+  Agora é preciso importar esse módulo dentro da <strong>Entidade</strong>
+</p>
+
+```typescript
+import { v4 as uuid } from 'uuid';
+```
+
+<p>
+  Precisamos também definir a coluna id como <strong>readonly</strong>, para no caso de um possível update desse usuário, ele não poderá ser alterado, e só poderá ser definido dentro dessa entidade.
+</p>
+
+```typescript
+  @PrimaryColumn()
+  readonly id: string
+```
+
+<p>
+  Finalizando a entidade, para esse <strong>ID</strong>, precisamos criar um construtor com uma instrução, caso ele venha com um valor nulo, defini-lo como <strong>UUID</strong>.
+</p>
+
+```typescript
+  constructor() {
+    if(!this.id) {
+      this.id = uuid();
+    }
+  }
+```
+
 <br
 />
 
 #### WHAT IS REPOSITORY?
+
 
 <br
 />
@@ -1120,7 +1258,7 @@ $ yarn typeorm migration:run
 <br
 />
 
-#### CREATE A NEW CONTROLLERx
+#### CREATE A NEW CONTROLLER
 
 <br
 />
@@ -1199,3 +1337,6 @@ $ yarn dev
 />
 
 ### ABOUT ME
+
+<br
+/>
