@@ -1103,7 +1103,7 @@ $ yarn typeorm migration:run CreateUsers
 
 <p
 >
-  Para criarmos uma entidade com o TypeORM precisamos definir onde essa entidade está dentro da nossa aplicação, para isso dentro do <strong>ormconfig.json</strong>
+  To create an entity with TypeORM we need to define where this entity is inside our application, for that inside <strong>ormconfig.json</strong>
 </p>
 
 ```json
@@ -1120,7 +1120,7 @@ $ yarn typeorm migration:run CreateUsers
 
 <p
 >
-  Agora precisamos rodar um comando na cli para criar a entidade dentro da pasta entities referenciada no <strong>ormconfig.json</strong>
+  Now you need to run a command in the cli to create the entity inside the entities folder referenced in <strong>ormconfig.json</strong>
 </p>
 
 ```powershell
@@ -1129,7 +1129,7 @@ $ yarn typeorm entity:create -n User
 
 <p
 >
-  Depois podemos ver o arquivo <strong>User.ts</strong> dentro da pasta <strong>entities</strong>, e ele já cria uma base do que vai ser a entidade de fato. Mas antes de continuar, devemos habilitar o <strong>experimentalDecorators</strong> e o <strong>emitDecoratorMetadata</strong>, para podermos trabalhar com <strong>decorators</strong>.
+  Then we can see the <strong>User.ts</strong> file inside the <strong>entities</strong> folder, and it already creates a base of what the entity will actually be. But before continuing, we must enable <strong>experimentalDecorators</strong> and <strong>emitDecoratorMetadata</strong>, so that we can work with <strong>decorators</strong>.
 </p>
 
 ```json
@@ -1149,7 +1149,7 @@ export class User {
 ```
 
 <p>
-  No decorator Entity precisamos passar como parametro o nome da entidade, dentro da classe <strong>User</strong> temos que definir todos os atributos já setados na migration <strong>CreateUsers</strong>, também precisamos definir suas colunas, id, como <strong>PrimaryColumn</strong>, as colunas de tipo string, number, e boolean, são definidas apenas como <strong>Column</strong>, já as colunas de data, precisão de um tipo especial, a coluna de criação de data é definida como <strong>CreateDateColumn</strong>, a coluna de alteração de data é definida como <strong>UpdateDateColumn<strong>.
+  In the decorator Entity we need to pass as parameter the name of the entity, inside the class <strong>User</strong> we have to define all the attributes already set in the <strong>CreateUsers</strong> migration, we also need to define its columns, id, as <strong>PrimaryColumn</strong>, string, number, and boolean type columns are defined only as <strong>Column</strong>, whereas date columns, precision of a special type, the creation column The date change column is defined as <strong>CreateDateColumn</strong>, the date change column is defined as <strong>UpdateDateColumn<strong>.
 </p>
 
 ```typescript
@@ -1184,7 +1184,7 @@ export class User {
 ```
 
 <p>
-  Por último, precisamos configurar a biblioteca <strong>UUID</strong> dentro da entidade, para o mesmo, precisamos baixa-lá
+  Finally, we need to configure the <strong>UUID</strong> library inside the entity, for the same, we need to download it.
 </p>
 
 ```powershell
@@ -1192,7 +1192,7 @@ $ yarn add uuid
 ```
 
 <p>
-  E também sua biblioteca de tipos.
+  And also your type library.
 </p>
 
 ```powershell
@@ -1200,7 +1200,7 @@ $ yarn add @types/uuid
 ```
 
 <p>
-  Agora é preciso importar esse módulo dentro da <strong>Entidade</strong>
+  Now you need to import this module into the <strong>Entity</strong>
 </p>
 
 ```typescript
@@ -1208,7 +1208,7 @@ import { v4 as uuid } from 'uuid';
 ```
 
 <p>
-  Precisamos também definir a coluna id como <strong>readonly</strong>, para no caso de um possível update desse usuário, ele não poderá ser alterado, e só poderá ser definido dentro dessa entidade.
+  We also need to define the id column as <strong>readonly</strong>, so in case of a possible update of this user, it cannot be changed, and can only be defined within this entity.
 </p>
 
 ```typescript
@@ -1217,7 +1217,7 @@ import { v4 as uuid } from 'uuid';
 ```
 
 <p>
-  Finalizando a entidade, para esse <strong>ID</strong>, precisamos criar um construtor com uma instrução, caso ele venha com um valor nulo, defini-lo como <strong>UUID</strong>.
+  Finalizing the entity, for this <strong>ID</strong>, we need to create a constructor with an instruction, if it comes with a null value, define it as <strong>UUID</strong>.
 </p>
 
 ```typescript
