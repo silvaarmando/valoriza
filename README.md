@@ -1233,8 +1233,8 @@ import { v4 as uuid } from 'uuid';
 
 #### WHAT IS REPOSITORY?
 
-
-<br
+<p> Repository is the layer or part of the ORM that makes a connection between Entity and Database. Its purpose is to isolate objects and as a domain entity in the database.
+</p> <br
 />
 
 #### CREATE A NEW REPOSITORY
